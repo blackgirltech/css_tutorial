@@ -7,10 +7,13 @@ In our [HTML tutorial](https://github.com/blackgirltech/html_tutorial) we learnt
 These documents are called Cascading Stylesheets, or CSS, which is used to style the content of your webpage.
 
 ### The Box Model
+Everything you see in on a webpage lives in a rectangular box, a HTML file is made up of a number of boxes arranged in a certain way. There are two types of boxes, a `div` which is a type of block (_vertical_) box and a `span` which is a type of inline (_horizontal_) box. Elements are either a type of `div` e.g. `<img>`, `<p>`, `<ul>` or a type of `span` e.g. `<a>`, `<input>`, `<em>`. Each element looks like this:
+![The box model](/assets/img/box_model.jpg)
+
+Each element has a margin, border & padding, we'll cover more of this later.
 
 ## First Steps
-
-If you've taken our HTML tutorial, skip straight to [I've Done the HTML Tutorial](#)
+If you've taken our HTML tutorial, skip straight to [I've Done the HTML Tutorial](#i've-done-the-html-tutorial)
 
 ### I'm A Complete Newbie
 So, let's grab our starter files:
@@ -30,7 +33,7 @@ Next we'll download a text editor for us to write code in. [Sublime Text](https:
 If you've done our HTML tutorial, you can use that same folder.
 1. In your __assets__ folder create a new folder called __stylesheets__
 2. Open your text editor, Sublime
-2. In your __stylesheets__ folder create a new file called _index.css_
+2. In your __stylesheets__ folder create a new file called **_index.css_**
 
 ## Let’s Build
 
