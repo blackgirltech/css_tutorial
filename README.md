@@ -36,14 +36,56 @@ If you've done our HTML tutorial, you can use that same folder.
 2. In your __stylesheets__ folder create a new file called **_index.css_**
 
 ## Let’s Build
+OK, so now we have some background knowledge it's time to put theory into practice. The first thing we want to do is let our HTML file know that our CSS exists, we do that by linking the two files together.
+In our `index.html` we'll want to add the following line in between our `<head>` tags:
 
-Linking CSS to HTML
+```html
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/index.css">
+```
+The `href` attribute tells the HTML file _where_ the CSS file lives. The `rel` attribute tells the HTML what the relationship is and the `type` attribute tells the HTML what type of style the file is written in.
 
-### Elements, Classes & IDs
+Your `head` element should look like this:
+```html
+  <head>
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/index.css">
+    <title>
+        My portfolio site
+    </title>
+  </head>
+```
+We won't see any changes yet because our `index.css` is empty but let's fill it in and get our page looking presentable.
 
-### Margins & Paddings
+### Elements & Classes
+
+CSS is written differently to HTML and we can tell the HTML to look a different way by using _selectors_. Selectors allow us to style different elements on the HTML page or give declare a common style. There are three different types of selectors.
+
+#### Elements
+We can style elements by using the element/tag name directly, add the line below to your css and see what happens.
+
+```css
+  li { background-color: red; }
+```
+Open your `index.html` file in your browser and you should see the `background-color` of your `<li>`s are now red. This line is saying find all the `<li>`s in the HTML and change the `background-color` to red. We don't always want to do this, and there is a way to avoid it.
+
+_Note: CSS uses american grammar so it's **color** not colour_
+
+#### Classes
+Sometimes we only want to apply a style to a few elements or we want different elements to have the same style, we can do this by using classes. Change your line in your css to the following:
+
+```css
+  .red-bg { background-color: red; }
+```
+Then change one of your `<li>`s to the following:
+```html
+  <li class="red-bg">
+```
+So here, instead of saying find all the `<li>` and change their `background-color` to red, we're saying find anything with the class `red-bg` and change it to red. Add `class="red-bg"` to some other elements in your HTML and you should see their background colours change too.
+
+With both examples you may have noticed that we use `{ }` to store the styles, these brackets are important because they group all the styles for an element/class together and tell the HTML what styles to use for each element/class. **Always remember to close your brackets**. We also use `;` to separate individual styles, so **always remember to add a `;` after each style declaration**.
 
 ### Fonts, Text, Lists & Links
+
+### Margins, Paddings & Floats
 
 ### Backgrounds
 
