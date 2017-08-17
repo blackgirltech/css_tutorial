@@ -8,6 +8,7 @@ These documents are called Cascading Stylesheets, or CSS, which is used to style
 
 ### The Box Model
 Everything you see in on a webpage lives in a rectangular box, a HTML file is made up of a number of boxes arranged in a certain way. There are two types of boxes, a `div` which is a type of block (_vertical_) box and a `span` which is a type of inline (_horizontal_) box. Elements are either a type of `div` e.g. `<img>`, `<p>`, `<ul>` or a type of `span` e.g. `<a>`, `<input>`, `<em>`. Each element looks like this:
+
 ![The box model](/assets/img/box_model.jpg)
 
 Each element has a margin, border & padding, we'll cover more of this later.
@@ -67,8 +68,6 @@ We can style elements by using the element/tag name directly, add the line below
 ```
 Open your `index.html` file in your browser and you should see the `background-color` of your `<li>`s are now red. This line is saying find all the `<li>`s in the HTML and change the `background-color` to red. We don't always want to do this, and there is a way to avoid it.
 
-_Note: CSS uses american grammar so it's **color** not colour_
-
 #### Classes
 Sometimes we only want to apply a style to a few elements or we want different elements to have the same style, we can do this by using classes. Change your line in your css to the following:
 
@@ -82,8 +81,64 @@ Then change one of your `<li>`s to the following:
 So here, instead of saying find all the `<li>` and change their `background-color` to red, we're saying find anything with the class `red-bg` and change it to red. Add `class="red-bg"` to some other elements in your HTML and you should see their background colours change too.
 
 With both examples you may have noticed that we use `{ }` to store the styles, these brackets are important because they group all the styles for an element/class together and tell the HTML what styles to use for each element/class. **Always remember to close your brackets**. We also use `;` to separate individual styles, so **always remember to add a `;` after each style declaration**.
+_Note: CSS uses american grammar so it's **color** not colour_
 
-### Fonts, Text, Lists & Links
+### Text, Lists & Links
+
+#### Text
+We can change the size, font-weight, font and color of the text on our page with CSS.
+
+Let's assume we want all the text on our page to be the same font, add the following line to your css file:
+
+```css
+  body { font-family: 'Ubuntu', sans-serif; }
+```
+
+This line tells our HTML in the browser to use the 'Ubuntu' font, if it doesn't have 'Ubuntu', it'll use the first sans-serif font it finds. Fonts depend on what fonts your end user has installed on their machine so it's best to use web safe fonts, these are fonts that are pre-installed on most computers. Find a list of web-safe fonts [here](http://www.cssfontstack.com/Web-Fonts).
+
+Okay, so let's ensure our paragraph looks the same in every browser. Add the following lines:
+
+```css
+  p {
+    font-size: 24px;
+    font-weight: lighter;
+    color: gray;
+  }
+```
+Here, we've declared all the `<p>` tags to be `24px` and `gray`. We've also said the `font-weight` should be `lighter`, this can be also take the numerical values `100` - `900` and the terms `bold`, `bolder`, `normal`. Experiment with the size, colour and weight until you find something you like.
+
+We can add these same styles to headings, lists and links, pretty much any text element but lists and links come with added syntax we can use to be spesific.
+
+#### Lists
+List elements have two parts the `<ul>` or `<ol>` and the `<li>`. It important to give the right element the right style otherwise we will get unexpected results. The `<ul>` is offers unique styling options that allow us to do thnigs like remove the default bullet points, let's try by adding the following line to our CSS:
+
+``` css
+  ul { list-style: none; }
+```
+If we had done `li { list-style: none; }` we wouldn't have seen the results we wanted. Change the selector to see for yourself.
+
+#### Links
+Like links, lists have their own ways to be styled. Lists have various **states**: `:hover`, `:visited`, `:focus` and `:link`, `:active`, and you can style links dependent on their state. Add the following:
+
+```css
+a:link {
+  color: coral;
+  text-decoration: none;
+}
+```
+We want all links to be `coral` and to have no text-decorations, including underline. On a website, different colours are used to denote different states so, let's do that.
+
+```css
+a:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: gray;
+}
+```
+Users can now easily spot links and see what links they've visited or are about to visit.
 
 ### Margins, Paddings & Floats
 
