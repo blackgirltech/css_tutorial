@@ -142,7 +142,7 @@ a:visited {
 ```
 Users can now easily spot links and see what links they've visited or are about to visit.
 
-### Helpers
+### Outline: A visual guide
 Before we get started with styling our page, it'd be useful to have a visual representation of how much space our elements are taking up on the page. We can do this easily by giving an element an `outline`. We'll give each section an `outline` before styling, and once we're satisfied we'll remove it.
 
 ### Styling the header
