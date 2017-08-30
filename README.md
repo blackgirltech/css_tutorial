@@ -142,10 +142,15 @@ a:visited {
 ```
 Users can now easily spot links and see what links they've visited or are about to visit.
 
-### Outline: A visual guide
-Before we get started with styling our page, it'd be useful to have a visual representation of how much space our elements are taking up on the page. We can do this easily by giving an element an `outline`. We'll give each section an `outline` before styling, and once we're satisfied we'll remove it.
-
 ### Styling the header
+Firstly let's add the following to our `index.css`:
+
+```css
+box-sizing: border-box;
+```
+
+This ensures that any `padding` or `border` added to an element will be taken into account by it's width. It's just to protect against any weird sizing issues.
+
 Spacing is a big part of CSS, whether that be the space inside of our elements or outside. To give a better idea, let's add an `outline` to our `header` element. Remember, it's best practice to create a class for the element you want to style and then add styling to that class, unless you want to apply a particular style globally (for example, to every `ul` on the page).
 
 ```html
@@ -174,6 +179,8 @@ Spacing is a big part of CSS, whether that be the space inside of our elements o
 </header>
 ```
 
+#### Outline: A visual guide
+Before we get started with styling our page, it'd be useful to have a visual representation of how much space our elements are taking up on the page. We can do this easily by giving an element an `outline`. We'll give each section an `outline` before styling, and once we're satisfied we'll remove it.
 Now add the following to our `index.css`:
 
 ```css
@@ -299,11 +306,81 @@ _Note: the above `margin` declaration can be rewritten as `margin: 0 10px 0 10px
 
 Let's remove all `outline` properties from our code as we no longer need the visual guide.
 
+### Styling the main section
 
-### Backgrounds
+That's the header out of the way, now onto the main content. Let's add some classes:
 
-## Finishing up
+```html
+<main class="main">
+  <div class="info">
+    <h2>Lorem ipsum</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ullamcorper laoreet nunc, vel lobortis quam finibus nec. Ut ligula augue, lobortis in metus ac, commodo malesuada diam.</p>
+  </div>
 
+  <div class="image-container">
+    <img src="assets/img/image.jpg" alt="a home office" />
+  </div>
+</main>
+```
+
+Again, let's add our visual guide:
+
+```css
+.main {
+  outline: 2px dashed red;
+}
+
+.info,
+.image-container {
+  outline: 2px dashed blue;
+}
+```
+
+We can now see our `main` container and the content inside of it. We're going to align it's content to the center, starting with the `.info` section:
+
+```css
+.info {
+  text-align: center;
+}
+```
+
+Now to center the image we'll again use the `margin` property, but this time instead of using a `px` value, we'll use the `auto` value which will center our image:
+
+```css
+img {
+  display: block;
+  margin: 0 auto;
+}
+```
+
+Lastly, let's add some `margin-top` to increase the distance from the `header` and remember to remove any `outline`s:
+
+```css
+.main {
+  margin-top: 50px;
+}
+```
+
+### Styling the footer
+
+We'll just center the text and add some `margin-top`:
+
+```html
+<footer class="footer">
+  <p>Nunc eros augue&copy;<p>
+</footer>
+```
+
+```css
+.footer {
+  margin-top: 50px;
+  text-align: center;
+}
+```
+
+And that's it!
+
+Feel free to replace the placeholder text with your own and add/change styles to your heart's content.
 
 ## Bonus
 Remember those extra pages we linked to in our `navigation`? Try creating those pages so our links work.
