@@ -83,7 +83,7 @@ So here, instead of saying find all the `<li>` and change their `background-colo
 With both examples you may have noticed that we use `{ }` to store the styles, these brackets are important because they group all the styles for an element/class together and tell the HTML what styles to use for each element/class. **Always remember to close your brackets**. We also use `;` to separate individual styles, so **always remember to add a `;` after each style declaration**.
 _Note: CSS uses american grammar so it's **color** not colour_
 
-Let's remove the styling `.red-bg` class and styling so we can start fresh.
+Let's remove the `.red-bg` class and styling so we can start fresh.
 
 ### Text, Lists & Links
 
