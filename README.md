@@ -83,6 +83,8 @@ So here, instead of saying find all the `<li>` and change their `background-colo
 With both examples you may have noticed that we use `{ }` to store the styles, these brackets are important because they group all the styles for an element/class together and tell the HTML what styles to use for each element/class. **Always remember to close your brackets**. We also use `;` to separate individual styles, so **always remember to add a `;` after each style declaration**.
 _Note: CSS uses american grammar so it's **color** not colour_
 
+Let's remove the styling `.red-bg` class and styling so we can start fresh.
+
 ### Text, Lists & Links
 
 #### Text
@@ -140,7 +142,163 @@ a:visited {
 ```
 Users can now easily spot links and see what links they've visited or are about to visit.
 
-### Margins, Paddings & Floats
+### Helpers
+Before we get started with styling our page, it'd be useful to have a visual representation of how much space our elements are taking up on the page. We can do this easily by giving an element an `outline`. We'll give each section an `outline` before styling, and once we're satisfied we'll remove it.
+
+### Styling the header
+Spacing is a big part of CSS, whether that be the space inside of our elements or outside. To give a better idea, let's add an `outline` to our `header` element. Remember, it's best practice to create a class for the element you want to style and then add styling to that class, unless you want to apply a particular style globally (for example, to every `ul` on the page).
+
+```html
+<header class="header">
+  <h1>My portfolio site</h1>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="about.html">
+          About
+        </a>
+      </li>
+      <li>
+        <a href="work.html">
+          Work
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+    </ul>
+  <nav>
+</header>
+```
+
+Now add the following to our `index.css`:
+
+```css
+.header {
+  outline: 2px dashed red;
+}
+```
+
+Now when we look at our website, we can clearly see how much space the `header` is taking up. Let's add an outline for the `h1` and the `nav`:
+
+```html
+<header class="header">
+  <h1 class="site-title">My portfolio site</h1>
+
+  <nav class="navigation">
+    <ul>
+      <li>
+        <a href="about.html">
+          About
+        </a>
+      </li>
+      <li>
+        <a href="work.html">
+          Work
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+    </ul>
+  <nav>
+</header>
+```
+
+```css
+.site-title,
+.navigation {
+  outline: 1px dashed blue;
+}
+```
+_Note: because we are adding the same declaration for both `.site-title` and `.navigation`, instead  of writing out both we can use a shorthand and separate each class with a comma._
+
+Now we have a clearer picture of what our elements are really doing, let's start styling the header. We'll want our navigation on the right hand side of the site, across from the title. Let's add some more classes:
+
+```html
+<header class="header">
+  <h1 class="site-title">My portfolio site</h1>
+
+  <nav class="navigation">
+    <ul class="navigation__list">
+      <li class="navigation__list-item">
+        <a href="about.html">
+          About
+        </a>
+      </li>
+      <li class="navigation__list-item">
+        <a href="work.html">
+          Work
+        </a>
+      </li>
+      <li class="navigation__list-item">
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+    </ul>
+  <nav>
+</header>
+```
+
+Then add the following styles to the `.header` class:
+
+```css
+.header {
+  outline: 2px dashed red;
+  display: flex;
+  justify-content: space-between;
+}
+```
+
+The `display` property allows us to specify the type of box will be used for an element, in our case, we'll be using `flex`. [More Info available here](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox).
+
+We now have our `navigation` on the right, but we can see some extra space within it's box. Remember our picture of the box model? This is called `padding`, which is essentially space within our box between the border and the content. Our `ul` is receiving automatic `padding` from the web browser, let's change that:
+
+```css
+ul {
+  list-style: none;
+  padding: 0;
+}
+```
+
+That's the `padding` issue sorted.
+
+Ideally we'd like our navigation items to run alongside each other instead of stacked on top of each other. Add the following styles to achieve this:
+
+```css
+.navigation__list-item {
+  display: inline-block;
+}
+```
+
+There's that `display` property again. `inline-block` forces elements to sit side by side.
+
+Nearly there! To finish up, let's make sure our `h1` and our `nav` are inline with each other, we'll do that by adding `align-items: center` to the `.header` class. We'll also give the navigation items a little breathing room by adding some `margin` (space outside of our element's box):
+
+```css
+.header {
+  outline: 2px dashed red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__list-item {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+```
+_Note: the above `margin` declaration can be rewritten as `margin: 0 10px 0 10px;` where the values translate to `margin: top right bottom left;`. An even shorter way would be to declare `margin: 0 10px;` as top and bottom values are the same, and left and right values are the same._
+
+Let's remove all `outline` properties from our code as we no longer need the visual guide.
+
 
 ### Backgrounds
 

@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+body { font-family: 'Ubuntu', sans-serif; }
+
+p {
+  font-size: 24px;
+  font-weight: lighter;
+  color: gray;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a:link {
+  color: coral;
+  text-decoration: none;
+}
+
+a:hover {
+  color: green;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: gray;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__list-item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.image {
+  width: 100%;
+}
+
+.section {
+  outline: 2px dashed red;
+  display: inline-block;
+  width: 50%;
+}
