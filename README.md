@@ -180,7 +180,7 @@ Spacing is a big part of CSS, whether that be the space inside of our elements o
 ```
 
 #### Outline: A visual guide
-Before we get started with styling our page, it'd be useful to have a visual representation of how much space our elements are taking up on the page. We can do this easily by giving an element an `outline`. We'll give each section an `outline` before styling, and once we're satisfied we'll remove it.
+Before we get started with styling our site, it'd be useful to have a visual representation of how much space our elements are taking up on the page. We can do this easily by giving an element an `outline`. We'll give each section an `outline` before styling, and once we're satisfied we'll remove it.
 Now add the following to our `index.css`:
 
 ```css
