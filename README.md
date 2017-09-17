@@ -146,7 +146,9 @@ Users can now easily spot links and see what links they've visited or are about 
 Firstly let's add the following to our `index.css`:
 
 ```css
-box-sizing: border-box;
+* {
+  box-sizing: border-box;
+}
 ```
 
 This ensures that any `padding` or `border` added to an element will be taken into account by it's width. It's just to protect against any weird sizing issues.
