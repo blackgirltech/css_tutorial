@@ -380,6 +380,17 @@ We'll just center the text and add some `margin-top`:
 }
 ```
 
+### Centering the content
+
+Lastly, let's make our site a little more focused by limiting with `width` and centering the content.
+
+```css
+body {
+  width: 900px;
+  margin: 0 auto;
+}
+```
+
 And that's it!
 
 Feel free to replace the placeholder text with your own and add/change styles to your heart's content.
